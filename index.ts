@@ -11,10 +11,10 @@ const BYBIT_API = "https://api.bybit.com/v2/public/tickers?symbol=BTCUSD";
 // const OKEX_API = 'https://www.okex.com/api/spot/v3/instruments/BTC-USDT/ticker';
 const COINBASE_API = "https://api.coinbase.com/v2/prices/BTC-USD/spot";
 const getPrices = async () => {
-  const binancePrice = await axios.get(BINANCE_API);
   const bybitPrice = await axios.get(BYBIT_API);
   // const okexPrice = await axios.get(OKEX_API);
   const coinbasePrice = await axios.get(COINBASE_API);
+  const binancePrice = await axios.get(BINANCE_API);
 
   return {
     binance: Number(binancePrice.data.price),
