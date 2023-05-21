@@ -2,6 +2,7 @@ import TelegramBot from "node-telegram-bot-api";
 import axios from "axios";
 
 const botToken = "5932488137:AAE1PT5wJjfRG0BQ_rlz4iHzW_2ikgt3-HY";
+console.log(`started on ${botToken}`);
 const bot = new TelegramBot(botToken, { polling: true });
 let chatIds: number[] = [];
 const BINANCE_API =
@@ -9,7 +10,6 @@ const BINANCE_API =
 const BYBIT_API = "https://api.bybit.com/v2/public/tickers?symbol=BTCUSD";
 // const OKEX_API = 'https://www.okex.com/api/spot/v3/instruments/BTC-USDT/ticker';
 const COINBASE_API = "https://api.coinbase.com/v2/prices/BTC-USD/spot";
-
 const getPrices = async () => {
   const binancePrice = await axios.get(BINANCE_API);
   const bybitPrice = await axios.get(BYBIT_API);
