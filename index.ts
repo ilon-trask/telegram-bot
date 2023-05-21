@@ -14,10 +14,10 @@ const getPrices = async () => {
   const bybitPrice = await axios.get(BYBIT_API);
   // const okexPrice = await axios.get(OKEX_API);
   const coinbasePrice = await axios.get(COINBASE_API);
-  const binancePrice = await axios.get(BINANCE_API);
+  // const binancePrice = await axios.get(BINANCE_API);
 
   return {
-    binance: Number(binancePrice.data.price),
+    // binance: Number(binancePrice.data.price),
     bybit: Number(bybitPrice.data.result[0].last_price),
     // okex: Number(okexPrice.data.last),
     coinbase: Number(coinbasePrice.data.data.amount),
